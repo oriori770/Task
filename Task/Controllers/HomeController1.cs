@@ -23,7 +23,42 @@ namespace Task.Controllers
         {
             return $"Username: {username}, Age: {age}";
         }
+        [Route("{search}/{results}")]
+        public string searchResults(string results, string search)
+        {
+            return $"{search}/{results}";
+        }
+        [Route("report/summary/{year}")]
+        public string Year(int year, string type)
+        {
+            return $"Year: {year}, Report Type: {type}";
+        }
+        [Route("invoice/view/{invoiceId}")]
+        public string invoice(int invoiceId, bool paid)
+        {
+            return $"Invoice ID: {invoiceId}, Paid: {paid}";
+        }
+        [Route("store/item/{itemId}")]
+        public string store(int itemId, string category)
+        {
+            return $"\"Item ID: {itemId}, Category: {category}";
+        }
+        [Route("blog/post/{postId}")]
+        public string blog(int postId, string title)
+        {
+            return $"Post ID: {postId}, Title: {title}.";
+        }
+        [Route("checkout/process")]
+        public string checkout(int cartId, bool discount)
+        {
+            return $"Cart ID: {cartId}, Discount Applied: {discount}.";
+        }
+        [Route("location/details/{locationId}")]
+        public string location(int locationId, string type, int population)
+        {
+            return $"\"Location ID: {locationId}, Type: {type}, Population: {population}";
+        }
 
-        //ricest.query
+        //ricest.querypopulation
     }
 }
