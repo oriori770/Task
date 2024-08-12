@@ -58,7 +58,13 @@ namespace Task.Controllers
         {
             return $"\"Location ID: {locationId}, Type: {type}, Population: {population}";
         }
+        [Route("logUTMs")]
+        public string bonus()
+        {
+            return Request.QueryString.ToString();
+        }
 
+        //Request.QueryString.ToString();
         //ricest.querypopulation
     }
 }
